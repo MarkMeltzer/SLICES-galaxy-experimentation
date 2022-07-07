@@ -1,0 +1,17 @@
+<tool id="curlTool" name="Curl-Tool" version="0.1.0+galaxy0" python_template_version="3.5" profile="21.05">
+    <description>This tools curls a REST API and gets the answer in JSON format.</description>
+    <requirements>
+    </requirements>
+    <command detect_errors="exit_code"><![CDATA[
+        curl $text_input > $outfile 2>/dev/null
+    ]]></command>
+    <inputs>
+        <param name="text_input" type="text" label="Enter API url here!"/>
+    </inputs>
+    <outputs>
+        <data name="outfile" label="Results: $text_input" format="json"/>
+    </outputs>
+    <help><![CDATA[
+        Just do it!
+    ]]></help>
+</tool>

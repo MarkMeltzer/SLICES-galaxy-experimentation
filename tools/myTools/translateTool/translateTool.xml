@@ -1,0 +1,34 @@
+<tool id="translateTool" name="Translate-Tool" version="0.1.0+galaxy0" python_template_version="3.5" profile="21.05">
+    <description>This tool</description>
+    <requirements>
+    </requirements>
+    <command detect_errors="exit_code"><![CDATA[
+        cat $text_input | python3 $__tool_directory__/script.py $src_lang $tgt_lang> $outfile
+    ]]></command>
+    <inputs>
+        <param name="text_input" type="data" label="Select JSON to translate!" format="json"/>
+        <param name="src_lang" label="Source language" type="select">
+            <option value="en" selected="true" />
+            <option value="de"/>
+            <option value="fr"/>
+            <option value="ru"/>
+            <option value="cs"/>
+            <option value="pl"/>
+        </param>
+        <param name="tgt_lang" label="Target language" type="select">
+            <option value="de" selected="true" />
+            <option value="en"/>
+            <option value="fr"/>
+            <option value="ru"/>
+            <option value="hi"/>
+            <option value="cs"/>
+            <option value="pl"/>
+        </param>
+    </inputs>
+    <outputs>
+        <data name="outfile" label="Results: $text_input" format="json"/>
+    </outputs>
+    <help><![CDATA[
+        Just do it!
+    ]]></help>
+</tool>

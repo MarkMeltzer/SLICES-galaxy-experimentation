@@ -1,0 +1,497 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "EC2 create and run script",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": "createKeyPair",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [],
+            "label": null,
+            "name": "Create AWS keypair",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 420.7833557128906,
+                "height": 102.60000610351562,
+                "left": -67.5,
+                "right": 132.5,
+                "top": 318.183349609375,
+                "width": 200,
+                "x": -67.5,
+                "y": 318.183349609375
+            },
+            "post_job_actions": {},
+            "tool_id": "createKeyPair",
+            "tool_state": "{\"AWS_ACCESS_KEY_ID\": \"AAAA\", \"AWS_SECRET_ACCESS_KEY\": \"AAAA\", \"KeyName\": \"galaxy-keypair-1\", \"region_name\": \"eu-central-1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "41f25ae1-ec00-4379-8c30-347cf5055cc7",
+            "workflow_outputs": [
+                {
+                    "label": "KeyPair creation results",
+                    "output_name": "outfile",
+                    "uuid": "d3439c67-e6b3-48a3-affc-d2f70db68869"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Shell script"
+                }
+            ],
+            "label": "Shell script",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 300.3833312988281,
+                "height": 61.80000305175781,
+                "left": 638.8333129882812,
+                "right": 838.8333129882812,
+                "top": 238.5833282470703,
+                "width": 200,
+                "x": 638.8333129882812,
+                "y": 238.5833282470703
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "d09bad35-547c-44c8-b96f-437f46503b19",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input": {
+                    "id": 0,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Filter private key",
+            "name": "JQ",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 342.18333435058594,
+                "height": 113.60000610351562,
+                "left": 178.56666564941406,
+                "right": 378.56666564941406,
+                "top": 228.5833282470703,
+                "width": 200,
+                "x": 178.56666564941406,
+                "y": 228.5833282470703
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "5ff75eb1a893",
+                "name": "jq",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filter\": \"\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"tsv\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0",
+            "type": "tool",
+            "uuid": "310d6a22-dd0c-46a3-81ea-c53daf656b54",
+            "workflow_outputs": [
+                {
+                    "label": "KeyPair private key",
+                    "output_name": "output",
+                    "uuid": "65d7eea3-3f4d-400e-85f9-132971c87378"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input": {
+                    "id": 0,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Filter KeyName",
+            "name": "JQ",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 492.6499786376953,
+                "height": 113.59999084472656,
+                "left": 176.5,
+                "right": 376.5,
+                "top": 379.04998779296875,
+                "width": 200,
+                "x": 176.5,
+                "y": 379.04998779296875
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "5ff75eb1a893",
+                "name": "jq",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filter\": \"\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"tsv\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0",
+            "type": "tool",
+            "uuid": "059a715d-edb3-440b-b0f1-849b5e237c69",
+            "workflow_outputs": [
+                {
+                    "label": "KeyPair KeyName",
+                    "output_name": "output",
+                    "uuid": "8433a905-6c8e-487f-9fe9-f4f471ee8b87"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "createEC2Instance",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "KeyName": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Create EC2 Instance",
+                    "name": "KeyName"
+                }
+            ],
+            "label": null,
+            "name": "Create EC2 Instance",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 585.5833435058594,
+                "height": 154.39999389648438,
+                "left": 416.5,
+                "right": 616.5,
+                "top": 431.183349609375,
+                "width": 200,
+                "x": 416.5,
+                "y": 431.183349609375
+            },
+            "post_job_actions": {},
+            "tool_id": "createEC2Instance",
+            "tool_state": "{\"AWS_ACCESS_KEY_ID\": \"AAAA\", \"AWS_SECRET_ACCESS_KEY\": \"AAAA\", \"ImageId\": \"ami-0cff7528ff583bf9a\", \"InstanceType\": \"t2.micro\", \"KeyName\": {\"__class__\": \"RuntimeValue\"}, \"MaxCount\": \"1\", \"MinCount\": \"1\", \"region_name\": \"eu-central-1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "4ccdd1c0-02f7-4f54-893a-2283f4131d76",
+            "workflow_outputs": [
+                {
+                    "label": "EC2 Intance results",
+                    "output_name": "outfile",
+                    "uuid": "6d70642c-12a2-412e-afd3-7d3dae0544a5"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input": {
+                    "id": 4,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Filter IP adress",
+            "name": "JQ",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 586.7833557128906,
+                "height": 113.60000610351562,
+                "left": 653.5,
+                "right": 853.5,
+                "top": 473.183349609375,
+                "width": 200,
+                "x": 653.5,
+                "y": 473.183349609375
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput": {
+                    "action_arguments": {
+                        "newtype": "txt"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "5ff75eb1a893",
+                "name": "jq",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filter\": \"\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"tsv\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0",
+            "type": "tool",
+            "uuid": "ae4021f9-d3d9-431b-a49d-02e5e6de3473",
+            "workflow_outputs": [
+                {
+                    "label": "EC2 Instance IP",
+                    "output_name": "output",
+                    "uuid": "f7e1e2fe-f947-4f02-abf0-bf819a7a76c7"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input": {
+                    "id": 4,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Filter instance id",
+            "name": "JQ",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 708.6666564941406,
+                "height": 113.60000610351562,
+                "left": 655,
+                "right": 855,
+                "top": 595.066650390625,
+                "width": 200,
+                "x": 655,
+                "y": 595.066650390625
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "5ff75eb1a893",
+                "name": "jq",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filter\": \"\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"tsv\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0",
+            "type": "tool",
+            "uuid": "c41150b2-a890-4c2c-b0f2-8b18635e98e4",
+            "workflow_outputs": [
+                {
+                    "label": "EC2 Instance id",
+                    "output_name": "output",
+                    "uuid": "369f469f-3830-4211-8ce5-6d3856ba8cc1"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "runShellScript",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "host": {
+                    "id": 5,
+                    "output_name": "output"
+                },
+                "priv_key": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "script": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Run shell script",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 468.4499816894531,
+                "height": 174.39999389648438,
+                "left": 914.5,
+                "right": 1114.5,
+                "top": 294.04998779296875,
+                "width": 200,
+                "x": 914.5,
+                "y": 294.04998779296875
+            },
+            "post_job_actions": {},
+            "tool_id": "runShellScript",
+            "tool_state": "{\"host\": {\"__class__\": \"ConnectedValue\"}, \"priv_key\": {\"__class__\": \"ConnectedValue\"}, \"script\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "5db440b9-df6b-4e40-8294-73e572a308f0",
+            "workflow_outputs": [
+                {
+                    "label": "Shell script results",
+                    "output_name": "outfile",
+                    "uuid": "e7df2e20-614c-44b6-9cc8-491c4569f234"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "destroyKeyPair",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "dependency": {
+                    "id": 7,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Destroy AWS keypair",
+                    "name": "dependency"
+                }
+            ],
+            "label": null,
+            "name": "Destroy AWS keypair",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 400.91668701171875,
+                "height": 134,
+                "left": 1187.2333984375,
+                "right": 1387.2333984375,
+                "top": 266.91668701171875,
+                "width": 200,
+                "x": 1187.2333984375,
+                "y": 266.91668701171875
+            },
+            "post_job_actions": {},
+            "tool_id": "destroyKeyPair",
+            "tool_state": "{\"AWS_ACCESS_KEY_ID\": \"AAAA\", \"AWS_SECRET_ACCESS_KEY\": \"AAAA\", \"KeyName\": \"galaxy-keypair-1\", \"dependency\": {\"__class__\": \"RuntimeValue\"}, \"region_name\": \"eu-central-1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "ca559c6d-5619-44f7-a19b-61068540c2dc",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "outfile",
+                    "uuid": "b9eb5e52-74b4-4635-b13e-da055b910bfc"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "destroyEC2Instance",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "InstanceId": {
+                    "id": 6,
+                    "output_name": "output"
+                },
+                "dependency": {
+                    "id": 7,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Destroy EC2 Instance",
+                    "name": "InstanceId"
+                },
+                {
+                    "description": "runtime parameter for tool Destroy EC2 Instance",
+                    "name": "dependency"
+                }
+            ],
+            "label": null,
+            "name": "Destroy EC2 Instance",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 611.3833160400391,
+                "height": 184.8000030517578,
+                "left": 1191.6666259765625,
+                "right": 1391.6666259765625,
+                "top": 426.58331298828125,
+                "width": 200,
+                "x": 1191.6666259765625,
+                "y": 426.58331298828125
+            },
+            "post_job_actions": {},
+            "tool_id": "destroyEC2Instance",
+            "tool_state": "{\"AWS_ACCESS_KEY_ID\": \"AAAA\", \"AWS_SECRET_ACCESS_KEY\": \"AAAA\", \"InstanceId\": {\"__class__\": \"RuntimeValue\"}, \"dependency\": {\"__class__\": \"RuntimeValue\"}, \"region_name\": \"eu-central-1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "263789d5-3fa7-47a1-92a8-56e98e57dc32",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "outfile",
+                    "uuid": "f1037fab-560e-4592-9d28-c0b2f0cb6b11"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "ab534cff-9024-4e93-910f-0632048569a4",
+    "version": 16
+}

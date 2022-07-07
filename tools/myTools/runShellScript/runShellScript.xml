@@ -1,0 +1,20 @@
+<tool id="runShellScript" name="Run shell script" version="0.1.0+galaxy0" python_template_version="3.5" profile="21.05">
+    <description>This tool runs a shell script via SSH.</description>
+    <requirements>
+    </requirements>
+    <command detect_errors="exit_code"><![CDATA[
+        chmod 600 $priv_key &&
+        cat $script | ssh $host -i $priv_key -o "StrictHostKeyChecking no" > $outfile
+    ]]></command>
+    <inputs>
+        <param name="host" type="data" format="txt" label="Enter hostname or ip address of target machine"/>
+        <param name="script" type="data" label="Select shell script" format="txt"/>
+        <param name="priv_key" type="data" label="Select private key" format="txt"/>
+    </inputs>
+    <outputs>
+        <data name="outfile" format="txt"/>
+    </outputs>
+    <help><![CDATA[
+        Just do it!
+    ]]></help>
+</tool>

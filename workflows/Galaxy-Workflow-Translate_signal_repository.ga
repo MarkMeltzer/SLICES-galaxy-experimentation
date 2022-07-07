@@ -1,0 +1,154 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "Translate signal repository",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": "curlTool",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [],
+            "label": null,
+            "name": "Curl-Tool",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 416.8000030517578,
+                "height": 61.80000305175781,
+                "left": 440,
+                "right": 640,
+                "top": 355,
+                "width": 200,
+                "x": 440,
+                "y": 355
+            },
+            "post_job_actions": {},
+            "tool_id": "curlTool",
+            "tool_state": "{\"text_input\": \"https://archive.softwareheritage.org/api/1/directory/535395579f5ae7ab6fa832b91d9ef1ad13848a42/\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "807e81ae-97f2-49c1-bd19-4ee72663d27e",
+            "workflow_outputs": [
+                {
+                    "label": "Results: ",
+                    "output_name": "outfile",
+                    "uuid": "1e15cb47-19f3-4b01-936b-200a108f2b4c"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "input": {
+                    "id": 0,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool JQ",
+                    "name": "input"
+                }
+            ],
+            "label": null,
+            "name": "JQ",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 432.1999969482422,
+                "height": 93.19999694824219,
+                "left": 718,
+                "right": 918,
+                "top": 339,
+                "width": 200,
+                "x": 718,
+                "y": 339
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "5ff75eb1a893",
+                "name": "jq",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filter\": \"[.[].name]\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"tsv\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0",
+            "type": "tool",
+            "uuid": "607f25a7-ab3e-4435-9c39-95683ae406fd",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "418e963f-b7e3-4660-b4b9-d8d812265899"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "translateTool",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "text_input": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Translate-Tool",
+                    "name": "text_input"
+                }
+            ],
+            "label": null,
+            "name": "Translate-Tool",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 492.3999938964844,
+                "height": 154.39999389648438,
+                "left": 996,
+                "right": 1196,
+                "top": 338,
+                "width": 200,
+                "x": 996,
+                "y": 338
+            },
+            "post_job_actions": {},
+            "tool_id": "translateTool",
+            "tool_state": "{\"src_lang\": \"en\", \"text_input\": {\"__class__\": \"RuntimeValue\"}, \"tgt_lang\": \"de\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "033b968b-9f80-47f7-8c3f-2b9118b68893",
+            "workflow_outputs": [
+                {
+                    "label": "Results: <galaxy.tools.parameters.basic.RuntimeValue object at 0x127d3b610>",
+                    "output_name": "outfile",
+                    "uuid": "ebbdaadb-6cdf-4ce2-aa36-64481cb11a83"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "140520de-96f3-4ad2-ba7e-9cc9d6f8b424",
+    "version": 17
+}

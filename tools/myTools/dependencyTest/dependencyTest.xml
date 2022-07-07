@@ -1,0 +1,18 @@
+<tool id="dependencyTest" name="Dependency Test" version="0.1.0+galaxy0" python_template_version="3.5" profile="21.05">
+    <description>This tool is used to test dependencies!</description>
+    <requirements>
+        <requirement type="package">ansible</requirement>
+    </requirements>
+    <command detect_errors="exit_code"><![CDATA[
+        ansible-playbook > $outfile
+    ]]></command>
+    <inputs>
+        <param name="text_input" type="text" label="Enter some text here!"/>
+    </inputs>
+    <outputs>
+        <data name="outfile" format="txt"/>
+    </outputs>
+    <help><![CDATA[
+        Just do it!
+    ]]></help>
+</tool>

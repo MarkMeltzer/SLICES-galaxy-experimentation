@@ -1,0 +1,53 @@
+<tool id="createEC2Instance" name="Create EC2 Instance" version="0.1.0+galaxy0" python_template_version="3.5" profile="21.05">
+    <description>This tools creates AWS EC2 instance</description>
+    <requirements>
+        <requirement type="package">boto3</requirement>
+    </requirements>
+    <command detect_errors="exit_code"><![CDATA[
+        python3 $__tool_directory__/script.py 
+            --region_name $region_name
+            --AWS_ACCESS_KEY_ID $AWS_ACCESS_KEY_ID 
+            --AWS_SECRET_ACCESS_KEY $AWS_SECRET_ACCESS_KEY 
+            --ImageId $ImageId 
+            --InstanceType $InstanceType 
+            --KeyName $KeyName 
+            --MinCount $MinCount
+            --MaxCount $MaxCount > $outfile
+    ]]></command>
+    <inputs>
+        <param name="region_name" label="Choose the AWS region" type="select">
+            <option value="eu-central-1" selected="true">Frankfurt (eu-central-1)</option>
+            <option value="eu-west-1">Ireland (eu-west-1)</option>
+            <option value="eu-west-2">London (eu-west-2)</option>
+            <option value="eu-west-3">Paris (eu-west-3)</option>
+            <option value="eu-north-1">Stockholm (eu-north-1)</option>
+            <option value="us-east-1">N. Virginia (us-east-1)</option>
+            <option value="us-east-2">Ohio (us-east-2)</option>
+            <option value="us-west-1">N. California (us-west-1)</option>
+            <option value="us-west-2">Oregon (us-west-2)</option>
+        </param>
+        <param name="AWS_ACCESS_KEY_ID" type="text" label="Enter AWS Access key ID here"/>
+        <param name="AWS_SECRET_ACCESS_KEY" type="text" label="Enter AWS Secret access key here"/>
+        <param name="ImageId" label="Choose the AMI image" type="select">
+            <option value="ami-0cff7528ff583bf9a" selected="true">Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type</option>
+            <option value="ami-065efef2c739d613b">Amazon Linux 2 AMI (HVM) - Kernel 4.14, SSD Volume Type</option>
+            <option value="ami-052efd3df9dad4825">Ubuntu Server 22.04 LTS (HVM), SSD Volume Type</option>
+            <option value="ami-08d4ac5b634553e16">Ubuntu Server 20.04 LTS (HVM), SSD Volume Type</option>
+            <option value="ami-0e1a729017e59e409">Microsoft Windows Server 2022 Base</option>
+            <option value="ami-041306c411c38a789">Microsoft Windows Server 2019 Base</option>
+        </param>
+        <param name="InstanceType" label="Choose the instace type here" type="select">
+            <option value="t2.micro" selected="true">t2.micro 1 vCPU 1 GiB memory</option>
+            <option value="t1.micro">t1.micro 1 vCPU 0.612 Gib memory</option>
+        </param>
+        <param name="KeyName" type="data" format="txt" label="Enter SSH Keypair name here"/>
+        <param name="MinCount" type="integer" value="1" label="Enter minimum number of instances to be launched here"/>
+        <param name="MaxCount" type="integer" value="1" label="Enter maximum number of instances to be launched here"/>
+    </inputs>
+    <outputs>
+        <data name="outfile" format="json"/>
+    </outputs>
+    <help><![CDATA[
+        Just do it!
+    ]]></help>
+</tool>
