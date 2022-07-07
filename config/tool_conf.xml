@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toolbox monitor="true">
+  <section id="getext" name="Get Data">
+    <tool file="data_source/upload.xml" />
+  </section>
+  <section id="myTools" name="My tools">
+    <tool file="myTools/testTool/testTool.xml" />
+    <tool file="myTools/curlTool/curlTool.xml" />
+    <tool file="myTools/translateTool/translateTool.xml" />
+    <tool file="myTools/runShellScript/runShellScript.xml" />
+    <tool file="myTools/dependencyTest/dependencyTest.xml" />
+  </section>
+  <section id="AWSTools" name="AWS Tools">
+    <tool file="myTools/createEC2Instance/createEC2Instance.xml" />
+    <tool file="myTools/destroyEC2Instance/destroyEC2Instance.xml" />
+    <tool file="myTools/createKeyPair/createKeyPair.xml" />
+    <tool file="myTools/destroyKeyPair/destroyKeyPair.xml" />
+  </section>
+</toolbox>

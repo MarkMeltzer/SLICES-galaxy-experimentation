@@ -76,7 +76,6 @@ tool_shed_wsgi.ini
 
 # Config files.
 datatypes_conf.xml
-tool_conf.xml
 external_service_types_conf.xml
 migrated_tools_conf.xml
 shed_tool_conf.xml
@@ -99,6 +98,8 @@ static/welcome.html.*
 static/welcome.html
 static/client_build_hash.txt
 lib/galaxy_test/selenium/jupyter/galaxy_selenium_context.yml
+!tool_conf.xml
+!galaxy.yml
 
 # Tool data.
 tool-data/annotation_profiler_options.xml
