@@ -7,14 +7,14 @@ This is a copy of the [galaxy project repo](https://github.com/galaxyproject/gal
 3. run `run.sh` to install all dependencies and run the instance locally.
 
 ### Get admin rights
-1. Regiser account through the web interface.
+1. Register account through the web interface.
 2. Edit `admin_users` in `/config/galaxy.yml` to the email of your galaxy account to get access to the admin panel. Restart the instance (see below).
 
 ### Install tool dependencies
 Some tools require their own dependencies. These can be installed via the web-interface by going to the Admin panel --> manage dependencies, selecting the missing dependencies and pressing install.
 
 ### Loading the workflows
-Some example (partially) workflows are provided in the `workflows` folder. To import them go to the workflows folder click import and select the .ga files. 
+Some (partially working) example workflows are provided in the `workflows` folder. To import them go to the workflows folder click import and select the .ga files. 
 
 # Starting/stopping the instance
 To **start** the instance simply run `./run.sh` again.
