@@ -10,6 +10,9 @@ This is a copy of the [galaxy project repo](https://github.com/galaxyproject/gal
 1. Register account through the web interface.
 2. Edit `admin_users` in `/config/galaxy.yml` to the email of your galaxy account to get access to the admin panel. Restart the instance (see below).
 
+### Install tools
+Some tools are provided with the instance while others need to be installed from external repositories, for example a json processing tool called jq. This can be installed via the admin panel --> install and uninstalled --> search for jq --> install.
+
 ### Install tool dependencies
 Some tools require their own dependencies. These can be installed via the web-interface by going to the Admin panel --> manage dependencies, selecting the missing dependencies and pressing install.
 
