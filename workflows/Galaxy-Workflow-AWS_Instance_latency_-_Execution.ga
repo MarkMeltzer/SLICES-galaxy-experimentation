@@ -1,0 +1,237 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "A subworkflow executing the AWS instance latency experiment.",
+    "format-version": "0.1",
+    "name": "AWS Instance latency - Execution",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Target Hostname"
+                }
+            ],
+            "label": "Target Hostname",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 469.316657172309,
+                "height": 73.98333740234375,
+                "left": 465.870361328125,
+                "right": 645.870361328125,
+                "top": 395.33331976996527,
+                "width": 180,
+                "x": 465.870361328125,
+                "y": 395.33331976996527
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "8de8554d-ded5-4762-aa19-37d51c1efbb0",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Shell script"
+                }
+            ],
+            "label": "Shell script",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 569.7092793782552,
+                "height": 55.616668701171875,
+                "left": 464.64816623263886,
+                "right": 644.6481662326389,
+                "top": 514.0926106770834,
+                "width": 180,
+                "x": 464.64816623263886,
+                "y": 514.0926106770834
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "9bacc5bb-2111-453b-8b00-417de9deefc1",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "SSH Private key"
+                }
+            ],
+            "label": "SSH Private key",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 662.2092793782552,
+                "height": 55.616668701171875,
+                "left": 463.370361328125,
+                "right": 643.370361328125,
+                "top": 606.5926106770834,
+                "width": 180,
+                "x": 463.370361328125,
+                "y": 606.5926106770834
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "fbc61a9e-860c-48f7-9de3-a5f0bd3c5f6b",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "runShellScript",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "host": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "priv_key": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "script": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Run shell script",
+                    "name": "host"
+                },
+                {
+                    "description": "runtime parameter for tool Run shell script",
+                    "name": "priv_key"
+                },
+                {
+                    "description": "runtime parameter for tool Run shell script",
+                    "name": "script"
+                }
+            ],
+            "label": null,
+            "name": "Run shell script",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 681.0592702229818,
+                "height": 156.96665954589844,
+                "left": 780.870361328125,
+                "right": 960.870361328125,
+                "top": 524.0926106770834,
+                "width": 180,
+                "x": 780.870361328125,
+                "y": 524.0926106770834
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutfile": {
+                    "action_arguments": {
+                        "newname": "Latency results"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "runShellScript",
+            "tool_state": "{\"host\": {\"__class__\": \"RuntimeValue\"}, \"priv_key\": {\"__class__\": \"RuntimeValue\"}, \"script\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "656cc352-75d2-4677-b66b-41ac6a09dcda",
+            "workflow_outputs": [
+                {
+                    "label": "Shell script output",
+                    "output_name": "outfile",
+                    "uuid": "5c9a8fec-5760-4343-8fbe-070588363fca"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "Show tail1",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input": {
+                    "id": 3,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Select last",
+                    "name": "input"
+                }
+            ],
+            "label": null,
+            "name": "Select last",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 619.7166646321615,
+                "height": 83.88333129882812,
+                "left": 1045.1481119791667,
+                "right": 1225.1481119791667,
+                "top": 535.8333333333334,
+                "width": 180,
+                "x": 1045.1481119791667,
+                "y": 535.8333333333334
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "Filtered Instance latency results"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Show tail1",
+            "tool_state": "{\"header\": \"false\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"lineNum\": \"1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.1",
+            "type": "tool",
+            "uuid": "c93226f2-a308-4953-8df2-8df9be31588e",
+            "workflow_outputs": [
+                {
+                    "label": "Instance latency",
+                    "output_name": "out_file1",
+                    "uuid": "24d16bff-9be0-4855-af8d-b7f5b4d28458"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "0e3738f1-959f-4e7e-a10a-0de78e922c43",
+    "version": 6
+}

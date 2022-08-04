@@ -4,7 +4,7 @@
     </requirements>
     <command detect_errors="exit_code"><![CDATA[
         chmod 600 $priv_key &&
-        cat $script | ssh $host -i $priv_key -o "StrictHostKeyChecking no" > $outfile
+        cat $script | ssh ec2-user@`cat $host` -i $priv_key -o "StrictHostKeyChecking no" > $outfile
     ]]></command>
     <inputs>
         <param name="host" type="data" format="txt" label="Enter hostname or ip address of target machine"/>

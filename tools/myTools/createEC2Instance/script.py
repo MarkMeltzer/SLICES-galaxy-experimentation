@@ -1,5 +1,8 @@
 import argparse, sys, boto3
+from ast import Try
 from botocore.config import Config
+import json
+import time
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--region_name", required=True)
@@ -30,5 +33,23 @@ result = client.run_instances(
     MaxCount=args.MaxCount
 )
 
+# wait until the instance is running so we get the public ip address
+instance_id = result["Instances"][0]["InstanceId"]
+update = None
+for i in range(24):
+    print(f"Checking for running state {i}", file=sys.stderr)
+    try:
+        update = client.describe_instances(InstanceIds=[instance_id])
+    except:
+        update = None
+    
+    if update is not None and update["Reservations"][0]["Instances"][0]["State"]["Name"] == "running":
+        break
+    else:
+        time.sleep(5)
+
 print("Returning result...", file=sys.stderr)
-print(result)
+if update is None:
+    print(json.dumps(result, indent=2, default=str))
+else:
+    print(json.dumps(update["Reservations"][0], indent=2, default=str))

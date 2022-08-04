@@ -1,0 +1,20 @@
+<tool id="replace" name="Replace text in dataset" version="0.1.1+galaxy0" python_template_version="3.5" profile="21.05">
+    <description>This tools replaces any string in a dataset with another.</description>
+    <command detect_errors="exit_code"><![CDATA[
+        cat $input_text | 
+        python3 -c 
+        "import sys;
+        print(sys.stdin.read().replace('$old_string', '`cat $new_string`'))" > $outfile
+    ]]></command>
+    <inputs>
+        <param name="input_text" type="data" format="txt" label="The dataset to modify."/>
+        <param name="old_string" type="text" label="Enter the string to be placed here."/>
+        <param name="new_string" type="data" format="txt" label="Enter the new string here."/>
+    </inputs>
+    <outputs>
+        <data name="outfile" format="json"/>
+    </outputs>
+    <help><![CDATA[
+        Just do it!
+    ]]></help>
+</tool>

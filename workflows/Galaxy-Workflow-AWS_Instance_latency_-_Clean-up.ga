@@ -1,0 +1,482 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "A subworkflow cleaning up after the AWS instance latency experiment.",
+    "format-version": "0.1",
+    "name": "AWS Instance latency - Clean-up",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "AWS Secret access key"
+                }
+            ],
+            "label": "AWS Secret access key",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 29.350006103515625,
+                "height": 82.20001220703125,
+                "left": 320.5333251953125,
+                "right": 520.5333251953125,
+                "top": -52.850006103515625,
+                "width": 200,
+                "x": 320.5333251953125,
+                "y": -52.850006103515625
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "9bacc5bb-2111-453b-8b00-417de9deefc1",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "48a5b9ef-dc57-44a3-a325-ad642bcd1146"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Workflow dependency"
+                }
+            ],
+            "label": "Workflow dependency",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 218.1999969482422,
+                "height": 82.19999694824219,
+                "left": 317.1166687011719,
+                "right": 517.1166687011719,
+                "top": 136,
+                "width": 200,
+                "x": 317.1166687011719,
+                "y": 136
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "71004480-95c9-4512-b2e8-f94b9057725c",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "ec88ed2d-88a2-4d0d-b3c2-ea3d6674eb68"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "AWS Access key ID"
+                }
+            ],
+            "label": "AWS Access key ID",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": -75.78334045410156,
+                "height": 82.19999694824219,
+                "left": 319.1166687011719,
+                "right": 519.1166687011719,
+                "top": -157.98333740234375,
+                "width": 200,
+                "x": 319.1166687011719,
+                "y": -157.98333740234375
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "8de8554d-ded5-4762-aa19-37d51c1efbb0",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "c0970974-bfa0-49dd-be04-d87b10dfb035"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Instance 1 InstanceId"
+                }
+            ],
+            "label": "Instance 1 InstanceId",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 419.15000915527344,
+                "height": 82.19999694824219,
+                "left": 321.933349609375,
+                "right": 521.933349609375,
+                "top": 336.95001220703125,
+                "width": 200,
+                "x": 321.933349609375,
+                "y": 336.95001220703125
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "fbc61a9e-860c-48f7-9de3-a5f0bd3c5f6b",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "7f75a63a-98e2-4570-b858-9b5ba08ff4f7"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Instance 2 InstanceId"
+                }
+            ],
+            "label": "Instance 2 InstanceId",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 533.0833282470703,
+                "height": 82.19999694824219,
+                "left": 322.8500061035156,
+                "right": 522.8500061035156,
+                "top": 450.8833312988281,
+                "width": 200,
+                "x": 322.8500061035156,
+                "y": 450.8833312988281
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "455f4c88-47e9-4ab5-a0a8-46e4465b4fc1",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "753186c2-c754-4e88-a02b-081510bff75b"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 5,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Keypair name"
+                }
+            ],
+            "label": "Keypair name",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 616.6833038330078,
+                "height": 61.80000305175781,
+                "left": 325.51666259765625,
+                "right": 525.5166625976562,
+                "top": 554.88330078125,
+                "width": 200,
+                "x": 325.51666259765625,
+                "y": 554.88330078125
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "090ebef3-1ee4-4e9c-b3f0-070208e3ff49",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "7f295e53-8190-47b0-829e-7cf9150b11c9"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "destroyEC2Instance",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "AWS_ACCESS_KEY_ID": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "AWS_SECRET_ACCESS_KEY": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "InstanceId": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "dependency": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Destroy EC2 Instance",
+                    "name": "AWS_ACCESS_KEY_ID"
+                },
+                {
+                    "description": "runtime parameter for tool Destroy EC2 Instance",
+                    "name": "AWS_SECRET_ACCESS_KEY"
+                },
+                {
+                    "description": "runtime parameter for tool Destroy EC2 Instance",
+                    "name": "InstanceId"
+                },
+                {
+                    "description": "runtime parameter for tool Destroy EC2 Instance",
+                    "name": "dependency"
+                }
+            ],
+            "label": null,
+            "name": "Destroy EC2 Instance",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 98.816650390625,
+                "height": 306.79998779296875,
+                "left": 815.0499877929688,
+                "right": 1015.0499877929688,
+                "top": -207.98333740234375,
+                "width": 200,
+                "x": 815.0499877929688,
+                "y": -207.98333740234375
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutfile": {
+                    "action_arguments": {
+                        "newname": "Instance termination results"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "destroyEC2Instance",
+            "tool_state": "{\"AWS_ACCESS_KEY_ID\": {\"__class__\": \"RuntimeValue\"}, \"AWS_SECRET_ACCESS_KEY\": {\"__class__\": \"RuntimeValue\"}, \"InstanceId\": {\"__class__\": \"RuntimeValue\"}, \"dependency\": {\"__class__\": \"RuntimeValue\"}, \"region_name\": \"us-east-1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "40b66630-c8eb-4bb2-af3d-cd9c29b032b8",
+            "workflow_outputs": [
+                {
+                    "label": "Instance 1 termination",
+                    "output_name": "outfile",
+                    "uuid": "e2013b7d-8e86-4a5d-bde4-a5a6a6a0a3e3"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "destroyEC2Instance",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "AWS_ACCESS_KEY_ID": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "AWS_SECRET_ACCESS_KEY": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "InstanceId": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "dependency": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Destroy EC2 Instance",
+                    "name": "AWS_ACCESS_KEY_ID"
+                },
+                {
+                    "description": "runtime parameter for tool Destroy EC2 Instance",
+                    "name": "AWS_SECRET_ACCESS_KEY"
+                },
+                {
+                    "description": "runtime parameter for tool Destroy EC2 Instance",
+                    "name": "InstanceId"
+                },
+                {
+                    "description": "runtime parameter for tool Destroy EC2 Instance",
+                    "name": "dependency"
+                }
+            ],
+            "label": null,
+            "name": "Destroy EC2 Instance",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 425.4833221435547,
+                "height": 306.79998779296875,
+                "left": 817.7166748046875,
+                "right": 1017.7166748046875,
+                "top": 118.68333435058594,
+                "width": 200,
+                "x": 817.7166748046875,
+                "y": 118.68333435058594
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutfile": {
+                    "action_arguments": {
+                        "newname": "Instance termination results"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "destroyEC2Instance",
+            "tool_state": "{\"AWS_ACCESS_KEY_ID\": {\"__class__\": \"RuntimeValue\"}, \"AWS_SECRET_ACCESS_KEY\": {\"__class__\": \"RuntimeValue\"}, \"InstanceId\": {\"__class__\": \"RuntimeValue\"}, \"dependency\": {\"__class__\": \"RuntimeValue\"}, \"region_name\": \"us-east-1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "f249a66e-c996-4d38-a143-41f3fb55c6f9",
+            "workflow_outputs": [
+                {
+                    "label": "Instance 2 termination results",
+                    "output_name": "outfile",
+                    "uuid": "60088a1d-1f0f-439f-ae0e-630f35a892a9"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "destroyKeyPair",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "AWS_ACCESS_KEY_ID": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "AWS_SECRET_ACCESS_KEY": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "KeyName": {
+                    "id": 5,
+                    "output_name": "output"
+                },
+                "dependency": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Destroy AWS keypair",
+                    "name": "AWS_ACCESS_KEY_ID"
+                },
+                {
+                    "description": "runtime parameter for tool Destroy AWS keypair",
+                    "name": "AWS_SECRET_ACCESS_KEY"
+                },
+                {
+                    "description": "runtime parameter for tool Destroy AWS keypair",
+                    "name": "KeyName"
+                },
+                {
+                    "description": "runtime parameter for tool Destroy AWS keypair",
+                    "name": "dependency"
+                }
+            ],
+            "label": null,
+            "name": "Destroy AWS keypair",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 742.4833374023438,
+                "height": 306.79998779296875,
+                "left": 820.38330078125,
+                "right": 1020.38330078125,
+                "top": 435.683349609375,
+                "width": 200,
+                "x": 820.38330078125,
+                "y": 435.683349609375
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutfile": {
+                    "action_arguments": {
+                        "newname": "Keypair destruction results"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "destroyKeyPair",
+            "tool_state": "{\"AWS_ACCESS_KEY_ID\": {\"__class__\": \"RuntimeValue\"}, \"AWS_SECRET_ACCESS_KEY\": {\"__class__\": \"RuntimeValue\"}, \"KeyName\": {\"__class__\": \"RuntimeValue\"}, \"dependency\": {\"__class__\": \"RuntimeValue\"}, \"region_name\": \"us-east-1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "46fde052-ddb7-4237-994f-9d1533177a24",
+            "workflow_outputs": [
+                {
+                    "label": "Keypair destruction results",
+                    "output_name": "outfile",
+                    "uuid": "2805b7b2-5d9c-43ae-b389-62b7e5dddc46"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "87cf48a6-ac77-4c03-9aa0-14e52c08b98c",
+    "version": 7
+}

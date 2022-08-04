@@ -1,0 +1,1729 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "The full workflow for the AWS Instance latency experiment",
+    "format-version": "0.1",
+    "name": "AWS Instance latency",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Shell scripts"
+                }
+            ],
+            "label": "Shell scripts",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 487.75001525878906,
+                "height": 61.80000305175781,
+                "left": 348.6000061035156,
+                "right": 548.6000061035156,
+                "top": 425.95001220703125,
+                "width": 200,
+                "x": 348.6000061035156,
+                "y": 425.95001220703125
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "e1b05d9b-f890-419b-9bd0-5c10de6d0f87",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "AWS Access Key Id"
+                }
+            ],
+            "label": "AWS Access Key Id",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 124.69999694824219,
+                "height": 82.19999694824219,
+                "left": 965.5499877929688,
+                "right": 1165.5499877929688,
+                "top": 42.5,
+                "width": 200,
+                "x": 965.5499877929688,
+                "y": 42.5
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "ecace70c-9845-46fb-98ff-865c72a7dab5",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "AWS Secret Access key"
+                }
+            ],
+            "label": "AWS Secret Access key",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 224.88333129882812,
+                "height": 82.19999694824219,
+                "left": 960.0166625976562,
+                "right": 1160.0166625976562,
+                "top": 142.68333435058594,
+                "width": 200,
+                "x": 960.0166625976562,
+                "y": 142.68333435058594
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "bad76808-d4bd-4632-8309-ba5a7493cd2a",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "id": 3,
+            "input_connections": {
+                "AWS Access key Id": {
+                    "id": 1,
+                    "input_subworkflow_step_id": 0,
+                    "output_name": "output"
+                },
+                "AWS Secret access key": {
+                    "id": 2,
+                    "input_subworkflow_step_id": 1,
+                    "output_name": "output"
+                },
+                "Shell script": {
+                    "id": 0,
+                    "input_subworkflow_step_id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "AWS Instance latency - Setup",
+            "outputs": [],
+            "position": {
+                "bottom": 911.9666748046875,
+                "height": 509.20001220703125,
+                "left": 666.1500244140625,
+                "right": 866.1500244140625,
+                "top": 402.76666259765625,
+                "width": 200,
+                "x": 666.1500244140625,
+                "y": 402.76666259765625
+            },
+            "subworkflow": {
+                "a_galaxy_workflow": "true",
+                "annotation": "",
+                "format-version": "0.1",
+                "name": "AWS Instance latency - Setup",
+                "steps": {
+                    "0": {
+                        "annotation": "",
+                        "content_id": null,
+                        "errors": null,
+                        "id": 0,
+                        "input_connections": {},
+                        "inputs": [
+                            {
+                                "description": "",
+                                "name": "AWS Access key Id"
+                            }
+                        ],
+                        "label": "AWS Access key Id",
+                        "name": "Input dataset",
+                        "outputs": [],
+                        "position": {
+                            "bottom": 321.00555928548175,
+                            "height": 61.65000915527344,
+                            "left": 185.71112060546875,
+                            "right": 335.71112060546875,
+                            "top": 259.3555501302083,
+                            "width": 150,
+                            "x": 185.71112060546875,
+                            "y": 259.3555501302083
+                        },
+                        "tool_id": null,
+                        "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+                        "tool_version": null,
+                        "type": "data_input",
+                        "uuid": "0c127a81-a7fc-4fc7-ab88-122d3d3afff3",
+                        "workflow_outputs": []
+                    },
+                    "1": {
+                        "annotation": "",
+                        "content_id": null,
+                        "errors": null,
+                        "id": 1,
+                        "input_connections": {},
+                        "inputs": [
+                            {
+                                "description": "",
+                                "name": "AWS Secret access key"
+                            }
+                        ],
+                        "label": "AWS Secret access key",
+                        "name": "Input dataset",
+                        "outputs": [],
+                        "position": {
+                            "bottom": 435.0499776204427,
+                            "height": 61.649993896484375,
+                            "left": 150.3777872721354,
+                            "right": 300.3777872721354,
+                            "top": 373.3999837239583,
+                            "width": 150,
+                            "x": 150.3777872721354,
+                            "y": 373.3999837239583
+                        },
+                        "tool_id": null,
+                        "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+                        "tool_version": null,
+                        "type": "data_input",
+                        "uuid": "25a2512e-45c3-4cea-9c48-1630d415f466",
+                        "workflow_outputs": []
+                    },
+                    "2": {
+                        "annotation": "",
+                        "content_id": null,
+                        "errors": null,
+                        "id": 2,
+                        "input_connections": {},
+                        "inputs": [
+                            {
+                                "description": "",
+                                "name": "Shell script"
+                            }
+                        ],
+                        "label": "Shell script",
+                        "name": "Input dataset",
+                        "outputs": [],
+                        "position": {
+                            "bottom": 575.9278055826823,
+                            "height": 46.350006103515625,
+                            "left": 1532.22216796875,
+                            "right": 1682.22216796875,
+                            "top": 529.5777994791666,
+                            "width": 150,
+                            "x": 1532.22216796875,
+                            "y": 529.5777994791666
+                        },
+                        "tool_id": null,
+                        "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+                        "tool_version": null,
+                        "type": "data_input",
+                        "uuid": "afc5a71a-b422-49e6-b3d3-4a72e8d80049",
+                        "workflow_outputs": []
+                    },
+                    "3": {
+                        "annotation": "",
+                        "content_id": "createKeyPair",
+                        "errors": null,
+                        "id": 3,
+                        "input_connections": {
+                            "AWS_ACCESS_KEY_ID": {
+                                "id": 0,
+                                "output_name": "output"
+                            },
+                            "AWS_SECRET_ACCESS_KEY": {
+                                "id": 1,
+                                "output_name": "output"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool Create AWS keypair",
+                                "name": "AWS_ACCESS_KEY_ID"
+                            },
+                            {
+                                "description": "runtime parameter for tool Create AWS keypair",
+                                "name": "AWS_SECRET_ACCESS_KEY"
+                            }
+                        ],
+                        "label": null,
+                        "name": "Create AWS keypair",
+                        "outputs": [
+                            {
+                                "name": "outfile",
+                                "type": "json"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 954.6777598063151,
+                            "height": 153.90000915527344,
+                            "left": 417.3777669270833,
+                            "right": 567.3777669270833,
+                            "top": 800.7777506510416,
+                            "width": 150,
+                            "x": 417.3777669270833,
+                            "y": 800.7777506510416
+                        },
+                        "post_job_actions": {
+                            "RenameDatasetActionoutfile": {
+                                "action_arguments": {
+                                    "newname": "AWS keypair creation"
+                                },
+                                "action_type": "RenameDatasetAction",
+                                "output_name": "outfile"
+                            }
+                        },
+                        "tool_id": "createKeyPair",
+                        "tool_state": "{\"AWS_ACCESS_KEY_ID\": {\"__class__\": \"RuntimeValue\"}, \"AWS_SECRET_ACCESS_KEY\": {\"__class__\": \"RuntimeValue\"}, \"KeyName\": \"temp-galaxy-keypair\", \"region_name\": \"us-east-1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "0.1.0+galaxy0",
+                        "type": "tool",
+                        "uuid": "a16d64fb-6b71-4fa8-87b7-3de0fb7426ae",
+                        "workflow_outputs": [
+                            {
+                                "label": "Keypair creation output",
+                                "output_name": "outfile",
+                                "uuid": "fe5e9e35-fee5-47f1-a38b-9942151e79fa"
+                            }
+                        ]
+                    },
+                    "4": {
+                        "annotation": "",
+                        "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+                        "errors": null,
+                        "id": 4,
+                        "input_connections": {
+                            "input": {
+                                "id": 3,
+                                "output_name": "outfile"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool JQ",
+                                "name": "input"
+                            }
+                        ],
+                        "label": "Filter KeyName",
+                        "name": "JQ",
+                        "outputs": [
+                            {
+                                "name": "output",
+                                "type": "json"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 811.633310953776,
+                            "height": 69.89999389648438,
+                            "left": 667.7111002604166,
+                            "right": 817.7111002604166,
+                            "top": 741.7333170572916,
+                            "width": 150,
+                            "x": 667.7111002604166,
+                            "y": 741.7333170572916
+                        },
+                        "post_job_actions": {
+                            "RenameDatasetActionoutput": {
+                                "action_arguments": {
+                                    "newname": "AWS keypair name"
+                                },
+                                "action_type": "RenameDatasetAction",
+                                "output_name": "output"
+                            }
+                        },
+                        "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+                        "tool_shed_repository": {
+                            "changeset_revision": "5ff75eb1a893",
+                            "name": "jq",
+                            "owner": "iuc",
+                            "tool_shed": "toolshed.g2.bx.psu.edu"
+                        },
+                        "tool_state": "{\"filter\": \".KeyName\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"tsv\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "1.0",
+                        "type": "tool",
+                        "uuid": "c9b8a4bf-695e-41d9-bfcc-3c16be90df90",
+                        "workflow_outputs": [
+                            {
+                                "label": "KeyName",
+                                "output_name": "output",
+                                "uuid": "d63caf74-54a3-4574-a95c-1c0881548d66"
+                            }
+                        ]
+                    },
+                    "5": {
+                        "annotation": "",
+                        "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+                        "errors": null,
+                        "id": 5,
+                        "input_connections": {
+                            "input": {
+                                "id": 3,
+                                "output_name": "outfile"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool JQ",
+                                "name": "input"
+                            }
+                        ],
+                        "label": "Filter private key",
+                        "name": "JQ",
+                        "outputs": [
+                            {
+                                "name": "output",
+                                "type": "json"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 981.9333140055338,
+                            "height": 85.19999694824219,
+                            "left": 669.04443359375,
+                            "right": 819.04443359375,
+                            "top": 896.7333170572916,
+                            "width": 150,
+                            "x": 669.04443359375,
+                            "y": 896.7333170572916
+                        },
+                        "post_job_actions": {
+                            "RenameDatasetActionoutput": {
+                                "action_arguments": {
+                                    "newname": "AWS keypair private key"
+                                },
+                                "action_type": "RenameDatasetAction",
+                                "output_name": "output"
+                            }
+                        },
+                        "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+                        "tool_shed_repository": {
+                            "changeset_revision": "5ff75eb1a893",
+                            "name": "jq",
+                            "owner": "iuc",
+                            "tool_shed": "toolshed.g2.bx.psu.edu"
+                        },
+                        "tool_state": "{\"filter\": \".KeyMaterial\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"tsv\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "1.0",
+                        "type": "tool",
+                        "uuid": "6f6c89f2-6f52-4f71-99ee-c0cf5fa1b614",
+                        "workflow_outputs": [
+                            {
+                                "label": "Private key",
+                                "output_name": "output",
+                                "uuid": "e815363b-49b5-4ab5-addd-726a69e0bcc3"
+                            }
+                        ]
+                    },
+                    "6": {
+                        "annotation": "",
+                        "content_id": "createEC2Instance",
+                        "errors": null,
+                        "id": 6,
+                        "input_connections": {
+                            "AWS_ACCESS_KEY_ID": {
+                                "id": 0,
+                                "output_name": "output"
+                            },
+                            "AWS_SECRET_ACCESS_KEY": {
+                                "id": 1,
+                                "output_name": "output"
+                            },
+                            "KeyName": {
+                                "id": 4,
+                                "output_name": "output"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool Create EC2 Instance",
+                                "name": "AWS_ACCESS_KEY_ID"
+                            },
+                            {
+                                "description": "runtime parameter for tool Create EC2 Instance",
+                                "name": "AWS_SECRET_ACCESS_KEY"
+                            },
+                            {
+                                "description": "runtime parameter for tool Create EC2 Instance",
+                                "name": "KeyName"
+                            }
+                        ],
+                        "label": null,
+                        "name": "Create EC2 Instance",
+                        "outputs": [
+                            {
+                                "name": "outfile",
+                                "type": "json"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 409.5111083984375,
+                            "height": 192,
+                            "left": 982.933349609375,
+                            "right": 1132.933349609375,
+                            "top": 217.5111083984375,
+                            "width": 150,
+                            "x": 982.933349609375,
+                            "y": 217.5111083984375
+                        },
+                        "post_job_actions": {
+                            "RenameDatasetActionoutfile": {
+                                "action_arguments": {
+                                    "newname": "Instance creation results"
+                                },
+                                "action_type": "RenameDatasetAction",
+                                "output_name": "outfile"
+                            }
+                        },
+                        "tool_id": "createEC2Instance",
+                        "tool_state": "{\"AWS_ACCESS_KEY_ID\": {\"__class__\": \"RuntimeValue\"}, \"AWS_SECRET_ACCESS_KEY\": {\"__class__\": \"RuntimeValue\"}, \"ImageId\": \"ami-0cff7528ff583bf9a\", \"InstanceType\": \"t2.micro\", \"KeyName\": {\"__class__\": \"RuntimeValue\"}, \"MaxCount\": \"1\", \"MinCount\": \"1\", \"region_name\": \"us-east-1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "0.1.0+galaxy0",
+                        "type": "tool",
+                        "uuid": "7aabf44c-d377-4f7d-8584-1414f71600ab",
+                        "workflow_outputs": [
+                            {
+                                "label": "Instance 1 creation results",
+                                "output_name": "outfile",
+                                "uuid": "3510d6ff-d3e1-4b1f-a20d-24a040be38fb"
+                            }
+                        ]
+                    },
+                    "7": {
+                        "annotation": "",
+                        "content_id": "createEC2Instance",
+                        "errors": null,
+                        "id": 7,
+                        "input_connections": {
+                            "AWS_ACCESS_KEY_ID": {
+                                "id": 0,
+                                "output_name": "output"
+                            },
+                            "AWS_SECRET_ACCESS_KEY": {
+                                "id": 1,
+                                "output_name": "output"
+                            },
+                            "KeyName": {
+                                "id": 4,
+                                "output_name": "output"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool Create EC2 Instance",
+                                "name": "AWS_ACCESS_KEY_ID"
+                            },
+                            {
+                                "description": "runtime parameter for tool Create EC2 Instance",
+                                "name": "AWS_SECRET_ACCESS_KEY"
+                            },
+                            {
+                                "description": "runtime parameter for tool Create EC2 Instance",
+                                "name": "KeyName"
+                            }
+                        ],
+                        "label": null,
+                        "name": "Create EC2 Instance",
+                        "outputs": [
+                            {
+                                "name": "outfile",
+                                "type": "json"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 746.7111002604166,
+                            "height": 192,
+                            "left": 989.2666829427084,
+                            "right": 1139.2666829427085,
+                            "top": 554.7111002604166,
+                            "width": 150,
+                            "x": 989.2666829427084,
+                            "y": 554.7111002604166
+                        },
+                        "post_job_actions": {
+                            "RenameDatasetActionoutfile": {
+                                "action_arguments": {
+                                    "newname": "Instance creation results"
+                                },
+                                "action_type": "RenameDatasetAction",
+                                "output_name": "outfile"
+                            }
+                        },
+                        "tool_id": "createEC2Instance",
+                        "tool_state": "{\"AWS_ACCESS_KEY_ID\": {\"__class__\": \"RuntimeValue\"}, \"AWS_SECRET_ACCESS_KEY\": {\"__class__\": \"RuntimeValue\"}, \"ImageId\": \"ami-0cff7528ff583bf9a\", \"InstanceType\": \"t2.micro\", \"KeyName\": {\"__class__\": \"RuntimeValue\"}, \"MaxCount\": \"1\", \"MinCount\": \"1\", \"region_name\": \"us-east-1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "0.1.0+galaxy0",
+                        "type": "tool",
+                        "uuid": "bbf56539-0c04-41b7-b968-a41feb23bdc7",
+                        "workflow_outputs": [
+                            {
+                                "label": "Instance 2 creation results",
+                                "output_name": "outfile",
+                                "uuid": "253a8424-7538-4d0d-aa97-9d7119e15942"
+                            }
+                        ]
+                    },
+                    "8": {
+                        "annotation": "",
+                        "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+                        "errors": null,
+                        "id": 8,
+                        "input_connections": {
+                            "input": {
+                                "id": 6,
+                                "output_name": "outfile"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool JQ",
+                                "name": "input"
+                            }
+                        ],
+                        "label": "Filter instance 1 hostname",
+                        "name": "JQ",
+                        "outputs": [
+                            {
+                                "name": "output",
+                                "type": "json"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 318.27777099609375,
+                            "height": 100.5,
+                            "left": 1226.888916015625,
+                            "right": 1376.888916015625,
+                            "top": 217.77777099609375,
+                            "width": 150,
+                            "x": 1226.888916015625,
+                            "y": 217.77777099609375
+                        },
+                        "post_job_actions": {
+                            "RenameDatasetActionoutput": {
+                                "action_arguments": {
+                                    "newname": "AWS Instance hostname"
+                                },
+                                "action_type": "RenameDatasetAction",
+                                "output_name": "output"
+                            }
+                        },
+                        "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+                        "tool_shed_repository": {
+                            "changeset_revision": "5ff75eb1a893",
+                            "name": "jq",
+                            "owner": "iuc",
+                            "tool_shed": "toolshed.g2.bx.psu.edu"
+                        },
+                        "tool_state": "{\"filter\": \".Instances[0].PublicDnsName\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"tsv\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "1.0",
+                        "type": "tool",
+                        "uuid": "12975dff-505b-4f70-8e38-24a57f5032b1",
+                        "workflow_outputs": [
+                            {
+                                "label": "Hostname 1",
+                                "output_name": "output",
+                                "uuid": "74abee6f-253d-44db-ac94-e82d81db5030"
+                            }
+                        ]
+                    },
+                    "9": {
+                        "annotation": "",
+                        "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+                        "errors": null,
+                        "id": 9,
+                        "input_connections": {
+                            "input": {
+                                "id": 6,
+                                "output_name": "outfile"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool JQ",
+                                "name": "input"
+                            }
+                        ],
+                        "label": "Filter instance 1 InstanceId",
+                        "name": "JQ",
+                        "outputs": [
+                            {
+                                "name": "output",
+                                "type": "json"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 460.8333333333333,
+                            "height": 100.5,
+                            "left": 1230.977783203125,
+                            "right": 1380.977783203125,
+                            "top": 360.3333333333333,
+                            "width": 150,
+                            "x": 1230.977783203125,
+                            "y": 360.3333333333333
+                        },
+                        "post_job_actions": {
+                            "RenameDatasetActionoutput": {
+                                "action_arguments": {
+                                    "newname": "AWS Instance Id"
+                                },
+                                "action_type": "RenameDatasetAction",
+                                "output_name": "output"
+                            }
+                        },
+                        "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+                        "tool_shed_repository": {
+                            "changeset_revision": "5ff75eb1a893",
+                            "name": "jq",
+                            "owner": "iuc",
+                            "tool_shed": "toolshed.g2.bx.psu.edu"
+                        },
+                        "tool_state": "{\"filter\": \".Instances[0].InstanceId\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"tsv\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "1.0",
+                        "type": "tool",
+                        "uuid": "36445105-193c-4bdf-8ce0-2d3d12412a1b",
+                        "workflow_outputs": [
+                            {
+                                "label": "InstanceId 1",
+                                "output_name": "output",
+                                "uuid": "96aba7f5-9d61-4b33-9735-260c73f40dd3"
+                            }
+                        ]
+                    },
+                    "10": {
+                        "annotation": "",
+                        "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+                        "errors": null,
+                        "id": 10,
+                        "input_connections": {
+                            "input": {
+                                "id": 7,
+                                "output_name": "outfile"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool JQ",
+                                "name": "input"
+                            }
+                        ],
+                        "label": "Filter instance 2 hostname",
+                        "name": "JQ",
+                        "outputs": [
+                            {
+                                "name": "output",
+                                "type": "json"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 660.611083984375,
+                            "height": 100.5,
+                            "left": 1221.888916015625,
+                            "right": 1371.888916015625,
+                            "top": 560.111083984375,
+                            "width": 150,
+                            "x": 1221.888916015625,
+                            "y": 560.111083984375
+                        },
+                        "post_job_actions": {
+                            "ChangeDatatypeActionoutput": {
+                                "action_arguments": {
+                                    "newtype": "txt"
+                                },
+                                "action_type": "ChangeDatatypeAction",
+                                "output_name": "output"
+                            },
+                            "RenameDatasetActionoutput": {
+                                "action_arguments": {
+                                    "newname": "AWS Instance hostname"
+                                },
+                                "action_type": "RenameDatasetAction",
+                                "output_name": "output"
+                            }
+                        },
+                        "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+                        "tool_shed_repository": {
+                            "changeset_revision": "5ff75eb1a893",
+                            "name": "jq",
+                            "owner": "iuc",
+                            "tool_shed": "toolshed.g2.bx.psu.edu"
+                        },
+                        "tool_state": "{\"filter\": \".Instances[0].PublicDnsName\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"tsv\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "1.0",
+                        "type": "tool",
+                        "uuid": "79965d8d-7477-4ab5-ab03-07a091ac6819",
+                        "workflow_outputs": [
+                            {
+                                "label": "Hostname 2",
+                                "output_name": "output",
+                                "uuid": "cc33368e-b01d-414b-bc2b-36492d7335d5"
+                            }
+                        ]
+                    },
+                    "11": {
+                        "annotation": "",
+                        "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+                        "errors": null,
+                        "id": 11,
+                        "input_connections": {
+                            "input": {
+                                "id": 7,
+                                "output_name": "outfile"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool JQ",
+                                "name": "input"
+                            }
+                        ],
+                        "label": "Filter instance 2 InstanceId",
+                        "name": "JQ",
+                        "outputs": [
+                            {
+                                "name": "output",
+                                "type": "json"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 817.63330078125,
+                            "height": 100.5,
+                            "left": 1223.7111002604167,
+                            "right": 1373.7111002604167,
+                            "top": 717.13330078125,
+                            "width": 150,
+                            "x": 1223.7111002604167,
+                            "y": 717.13330078125
+                        },
+                        "post_job_actions": {
+                            "RenameDatasetActionoutput": {
+                                "action_arguments": {
+                                    "newname": "AWS Instance Id"
+                                },
+                                "action_type": "RenameDatasetAction",
+                                "output_name": "output"
+                            }
+                        },
+                        "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+                        "tool_shed_repository": {
+                            "changeset_revision": "5ff75eb1a893",
+                            "name": "jq",
+                            "owner": "iuc",
+                            "tool_shed": "toolshed.g2.bx.psu.edu"
+                        },
+                        "tool_state": "{\"filter\": \".Instances[0].InstanceId\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"tsv\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "1.0",
+                        "type": "tool",
+                        "uuid": "a9936bc4-0ff1-49b5-8b9b-b18491376e09",
+                        "workflow_outputs": [
+                            {
+                                "label": "InstanceId 2",
+                                "output_name": "output",
+                                "uuid": "391e9794-f919-4aab-89ea-cc974a879715"
+                            }
+                        ]
+                    },
+                    "12": {
+                        "annotation": "",
+                        "content_id": "replace",
+                        "errors": null,
+                        "id": 12,
+                        "input_connections": {
+                            "input_text": {
+                                "id": 2,
+                                "output_name": "output"
+                            },
+                            "new_string": {
+                                "id": 10,
+                                "output_name": "output"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool Replace text in dataset",
+                                "name": "input_text"
+                            },
+                            {
+                                "description": "runtime parameter for tool Replace text in dataset",
+                                "name": "new_string"
+                            }
+                        ],
+                        "label": null,
+                        "name": "Replace text in dataset",
+                        "outputs": [
+                            {
+                                "name": "outfile",
+                                "type": "json"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 720.2111358642578,
+                            "height": 123.30000305175781,
+                            "left": 1776.2666015625,
+                            "right": 1926.2666015625,
+                            "top": 596.9111328125,
+                            "width": 150,
+                            "x": 1776.2666015625,
+                            "y": 596.9111328125
+                        },
+                        "post_job_actions": {
+                            "RenameDatasetActionoutfile": {
+                                "action_arguments": {
+                                    "newname": "Modified schell script"
+                                },
+                                "action_type": "RenameDatasetAction",
+                                "output_name": "outfile"
+                            }
+                        },
+                        "tool_id": "replace",
+                        "tool_state": "{\"input_text\": {\"__class__\": \"RuntimeValue\"}, \"new_string\": {\"__class__\": \"RuntimeValue\"}, \"old_string\": \"google.com\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "0.1.1+galaxy0",
+                        "type": "tool",
+                        "uuid": "46205932-c07b-4086-b5dc-cc578525256d",
+                        "workflow_outputs": [
+                            {
+                                "label": "Modified shell script",
+                                "output_name": "outfile",
+                                "uuid": "d1cd12ec-8f74-4bbf-abf3-38311a43b9db"
+                            }
+                        ]
+                    }
+                },
+                "tags": "",
+                "uuid": "0db53609-9701-4274-9165-4b8f960d00cb"
+            },
+            "tool_id": "0005d27f1dc662c8",
+            "type": "subworkflow",
+            "uuid": "37a27eaf-9641-4202-ab27-e5a797b879f9",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "KeyName",
+                    "uuid": "53c66324-3845-4d53-90c7-935f46110f32"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "id": 4,
+            "input_connections": {
+                "SSH Private key": {
+                    "id": 3,
+                    "input_subworkflow_step_id": 2,
+                    "output_name": "Private key"
+                },
+                "Shell script": {
+                    "id": 3,
+                    "input_subworkflow_step_id": 1,
+                    "output_name": "Modified shell script"
+                },
+                "Target Hostname": {
+                    "id": 3,
+                    "input_subworkflow_step_id": 0,
+                    "output_name": "Hostname 1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "AWS Instance latency - Execution",
+            "outputs": [],
+            "position": {
+                "bottom": 573.3499908447266,
+                "height": 204.8000030517578,
+                "left": 1012.13330078125,
+                "right": 1212.13330078125,
+                "top": 368.54998779296875,
+                "width": 200,
+                "x": 1012.13330078125,
+                "y": 368.54998779296875
+            },
+            "subworkflow": {
+                "a_galaxy_workflow": "true",
+                "annotation": "",
+                "format-version": "0.1",
+                "name": "AWS Instance latency - Execution",
+                "steps": {
+                    "0": {
+                        "annotation": "",
+                        "content_id": null,
+                        "errors": null,
+                        "id": 0,
+                        "input_connections": {},
+                        "inputs": [
+                            {
+                                "description": "",
+                                "name": "Target Hostname"
+                            }
+                        ],
+                        "label": "Target Hostname",
+                        "name": "Input dataset",
+                        "outputs": [],
+                        "position": {
+                            "bottom": 469.316657172309,
+                            "height": 73.98333740234375,
+                            "left": 465.870361328125,
+                            "right": 645.870361328125,
+                            "top": 395.33331976996527,
+                            "width": 180,
+                            "x": 465.870361328125,
+                            "y": 395.33331976996527
+                        },
+                        "tool_id": null,
+                        "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+                        "tool_version": null,
+                        "type": "data_input",
+                        "uuid": "8de8554d-ded5-4762-aa19-37d51c1efbb0",
+                        "workflow_outputs": []
+                    },
+                    "1": {
+                        "annotation": "",
+                        "content_id": null,
+                        "errors": null,
+                        "id": 1,
+                        "input_connections": {},
+                        "inputs": [
+                            {
+                                "description": "",
+                                "name": "Shell script"
+                            }
+                        ],
+                        "label": "Shell script",
+                        "name": "Input dataset",
+                        "outputs": [],
+                        "position": {
+                            "bottom": 569.7092793782552,
+                            "height": 55.616668701171875,
+                            "left": 464.64816623263886,
+                            "right": 644.6481662326389,
+                            "top": 514.0926106770834,
+                            "width": 180,
+                            "x": 464.64816623263886,
+                            "y": 514.0926106770834
+                        },
+                        "tool_id": null,
+                        "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+                        "tool_version": null,
+                        "type": "data_input",
+                        "uuid": "9bacc5bb-2111-453b-8b00-417de9deefc1",
+                        "workflow_outputs": []
+                    },
+                    "2": {
+                        "annotation": "",
+                        "content_id": null,
+                        "errors": null,
+                        "id": 2,
+                        "input_connections": {},
+                        "inputs": [
+                            {
+                                "description": "",
+                                "name": "SSH Private key"
+                            }
+                        ],
+                        "label": "SSH Private key",
+                        "name": "Input dataset",
+                        "outputs": [],
+                        "position": {
+                            "bottom": 662.2092793782552,
+                            "height": 55.616668701171875,
+                            "left": 463.370361328125,
+                            "right": 643.370361328125,
+                            "top": 606.5926106770834,
+                            "width": 180,
+                            "x": 463.370361328125,
+                            "y": 606.5926106770834
+                        },
+                        "tool_id": null,
+                        "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+                        "tool_version": null,
+                        "type": "data_input",
+                        "uuid": "fbc61a9e-860c-48f7-9de3-a5f0bd3c5f6b",
+                        "workflow_outputs": []
+                    },
+                    "3": {
+                        "annotation": "",
+                        "content_id": "runShellScript",
+                        "errors": null,
+                        "id": 3,
+                        "input_connections": {
+                            "host": {
+                                "id": 0,
+                                "output_name": "output"
+                            },
+                            "priv_key": {
+                                "id": 2,
+                                "output_name": "output"
+                            },
+                            "script": {
+                                "id": 1,
+                                "output_name": "output"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool Run shell script",
+                                "name": "host"
+                            },
+                            {
+                                "description": "runtime parameter for tool Run shell script",
+                                "name": "priv_key"
+                            },
+                            {
+                                "description": "runtime parameter for tool Run shell script",
+                                "name": "script"
+                            }
+                        ],
+                        "label": null,
+                        "name": "Run shell script",
+                        "outputs": [
+                            {
+                                "name": "outfile",
+                                "type": "txt"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 681.0592702229818,
+                            "height": 156.96665954589844,
+                            "left": 780.870361328125,
+                            "right": 960.870361328125,
+                            "top": 524.0926106770834,
+                            "width": 180,
+                            "x": 780.870361328125,
+                            "y": 524.0926106770834
+                        },
+                        "post_job_actions": {
+                            "RenameDatasetActionoutfile": {
+                                "action_arguments": {
+                                    "newname": "Latency results"
+                                },
+                                "action_type": "RenameDatasetAction",
+                                "output_name": "outfile"
+                            }
+                        },
+                        "tool_id": "runShellScript",
+                        "tool_state": "{\"host\": {\"__class__\": \"RuntimeValue\"}, \"priv_key\": {\"__class__\": \"RuntimeValue\"}, \"script\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "0.1.0+galaxy0",
+                        "type": "tool",
+                        "uuid": "656cc352-75d2-4677-b66b-41ac6a09dcda",
+                        "workflow_outputs": [
+                            {
+                                "label": "Shell script output",
+                                "output_name": "outfile",
+                                "uuid": "5c9a8fec-5760-4343-8fbe-070588363fca"
+                            }
+                        ]
+                    },
+                    "4": {
+                        "annotation": "",
+                        "content_id": "Show tail1",
+                        "errors": null,
+                        "id": 4,
+                        "input_connections": {
+                            "input": {
+                                "id": 3,
+                                "output_name": "outfile"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool Select last",
+                                "name": "input"
+                            }
+                        ],
+                        "label": null,
+                        "name": "Select last",
+                        "outputs": [
+                            {
+                                "name": "out_file1",
+                                "type": "input"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 619.7166646321615,
+                            "height": 83.88333129882812,
+                            "left": 1045.1481119791667,
+                            "right": 1225.1481119791667,
+                            "top": 535.8333333333334,
+                            "width": 180,
+                            "x": 1045.1481119791667,
+                            "y": 535.8333333333334
+                        },
+                        "post_job_actions": {
+                            "RenameDatasetActionout_file1": {
+                                "action_arguments": {
+                                    "newname": "Filtered Instance latency results"
+                                },
+                                "action_type": "RenameDatasetAction",
+                                "output_name": "out_file1"
+                            }
+                        },
+                        "tool_id": "Show tail1",
+                        "tool_state": "{\"header\": \"false\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"lineNum\": \"1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "1.0.1",
+                        "type": "tool",
+                        "uuid": "c93226f2-a308-4953-8df2-8df9be31588e",
+                        "workflow_outputs": [
+                            {
+                                "label": "Instance latency",
+                                "output_name": "out_file1",
+                                "uuid": "24d16bff-9be0-4855-af8d-b7f5b4d28458"
+                            }
+                        ]
+                    }
+                },
+                "tags": "",
+                "uuid": "0e3738f1-959f-4e7e-a10a-0de78e922c43"
+            },
+            "tool_id": "6c528a25ae52bbbf",
+            "type": "subworkflow",
+            "uuid": "79f37422-2049-4de3-b509-2b2e2bc6a177",
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "id": 5,
+            "input_connections": {
+                "AWS Access key ID": {
+                    "id": 1,
+                    "input_subworkflow_step_id": 2,
+                    "output_name": "output"
+                },
+                "AWS Secret access key": {
+                    "id": 2,
+                    "input_subworkflow_step_id": 0,
+                    "output_name": "output"
+                },
+                "Instance 1 InstanceId": {
+                    "id": 3,
+                    "input_subworkflow_step_id": 3,
+                    "output_name": "InstanceId 1"
+                },
+                "Instance 2 InstanceId": {
+                    "id": 3,
+                    "input_subworkflow_step_id": 4,
+                    "output_name": "InstanceId 2"
+                },
+                "Keypair name": {
+                    "id": 3,
+                    "input_subworkflow_step_id": 5,
+                    "output_name": "KeyName"
+                },
+                "Workflow dependency": {
+                    "id": 4,
+                    "input_subworkflow_step_id": 1,
+                    "output_name": "Shell script output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "AWS Instance latency - Clean-up",
+            "outputs": [],
+            "position": {
+                "bottom": 906.8500061035156,
+                "height": 387.6000061035156,
+                "left": 1378.699951171875,
+                "right": 1578.699951171875,
+                "top": 519.25,
+                "width": 200,
+                "x": 1378.699951171875,
+                "y": 519.25
+            },
+            "subworkflow": {
+                "a_galaxy_workflow": "true",
+                "annotation": "",
+                "format-version": "0.1",
+                "name": "AWS Instance latency - Clean-up",
+                "steps": {
+                    "0": {
+                        "annotation": "",
+                        "content_id": null,
+                        "errors": null,
+                        "id": 0,
+                        "input_connections": {},
+                        "inputs": [
+                            {
+                                "description": "",
+                                "name": "AWS Secret access key"
+                            }
+                        ],
+                        "label": "AWS Secret access key",
+                        "name": "Input dataset",
+                        "outputs": [],
+                        "position": {
+                            "bottom": 29.350006103515625,
+                            "height": 82.20001220703125,
+                            "left": 320.5333251953125,
+                            "right": 520.5333251953125,
+                            "top": -52.850006103515625,
+                            "width": 200,
+                            "x": 320.5333251953125,
+                            "y": -52.850006103515625
+                        },
+                        "tool_id": null,
+                        "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+                        "tool_version": null,
+                        "type": "data_input",
+                        "uuid": "9bacc5bb-2111-453b-8b00-417de9deefc1",
+                        "workflow_outputs": [
+                            {
+                                "label": null,
+                                "output_name": "output",
+                                "uuid": "48a5b9ef-dc57-44a3-a325-ad642bcd1146"
+                            }
+                        ]
+                    },
+                    "1": {
+                        "annotation": "",
+                        "content_id": null,
+                        "errors": null,
+                        "id": 1,
+                        "input_connections": {},
+                        "inputs": [
+                            {
+                                "description": "",
+                                "name": "Workflow dependency"
+                            }
+                        ],
+                        "label": "Workflow dependency",
+                        "name": "Input dataset",
+                        "outputs": [],
+                        "position": {
+                            "bottom": 218.1999969482422,
+                            "height": 82.19999694824219,
+                            "left": 317.1166687011719,
+                            "right": 517.1166687011719,
+                            "top": 136,
+                            "width": 200,
+                            "x": 317.1166687011719,
+                            "y": 136
+                        },
+                        "tool_id": null,
+                        "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+                        "tool_version": null,
+                        "type": "data_input",
+                        "uuid": "71004480-95c9-4512-b2e8-f94b9057725c",
+                        "workflow_outputs": [
+                            {
+                                "label": null,
+                                "output_name": "output",
+                                "uuid": "ec88ed2d-88a2-4d0d-b3c2-ea3d6674eb68"
+                            }
+                        ]
+                    },
+                    "2": {
+                        "annotation": "",
+                        "content_id": null,
+                        "errors": null,
+                        "id": 2,
+                        "input_connections": {},
+                        "inputs": [
+                            {
+                                "description": "",
+                                "name": "AWS Access key ID"
+                            }
+                        ],
+                        "label": "AWS Access key ID",
+                        "name": "Input dataset",
+                        "outputs": [],
+                        "position": {
+                            "bottom": -75.78334045410156,
+                            "height": 82.19999694824219,
+                            "left": 319.1166687011719,
+                            "right": 519.1166687011719,
+                            "top": -157.98333740234375,
+                            "width": 200,
+                            "x": 319.1166687011719,
+                            "y": -157.98333740234375
+                        },
+                        "tool_id": null,
+                        "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+                        "tool_version": null,
+                        "type": "data_input",
+                        "uuid": "8de8554d-ded5-4762-aa19-37d51c1efbb0",
+                        "workflow_outputs": [
+                            {
+                                "label": null,
+                                "output_name": "output",
+                                "uuid": "c0970974-bfa0-49dd-be04-d87b10dfb035"
+                            }
+                        ]
+                    },
+                    "3": {
+                        "annotation": "",
+                        "content_id": null,
+                        "errors": null,
+                        "id": 3,
+                        "input_connections": {},
+                        "inputs": [
+                            {
+                                "description": "",
+                                "name": "Instance 1 InstanceId"
+                            }
+                        ],
+                        "label": "Instance 1 InstanceId",
+                        "name": "Input dataset",
+                        "outputs": [],
+                        "position": {
+                            "bottom": 419.15000915527344,
+                            "height": 82.19999694824219,
+                            "left": 321.933349609375,
+                            "right": 521.933349609375,
+                            "top": 336.95001220703125,
+                            "width": 200,
+                            "x": 321.933349609375,
+                            "y": 336.95001220703125
+                        },
+                        "tool_id": null,
+                        "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+                        "tool_version": null,
+                        "type": "data_input",
+                        "uuid": "fbc61a9e-860c-48f7-9de3-a5f0bd3c5f6b",
+                        "workflow_outputs": [
+                            {
+                                "label": null,
+                                "output_name": "output",
+                                "uuid": "7f75a63a-98e2-4570-b858-9b5ba08ff4f7"
+                            }
+                        ]
+                    },
+                    "4": {
+                        "annotation": "",
+                        "content_id": null,
+                        "errors": null,
+                        "id": 4,
+                        "input_connections": {},
+                        "inputs": [
+                            {
+                                "description": "",
+                                "name": "Instance 2 InstanceId"
+                            }
+                        ],
+                        "label": "Instance 2 InstanceId",
+                        "name": "Input dataset",
+                        "outputs": [],
+                        "position": {
+                            "bottom": 533.0833282470703,
+                            "height": 82.19999694824219,
+                            "left": 322.8500061035156,
+                            "right": 522.8500061035156,
+                            "top": 450.8833312988281,
+                            "width": 200,
+                            "x": 322.8500061035156,
+                            "y": 450.8833312988281
+                        },
+                        "tool_id": null,
+                        "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+                        "tool_version": null,
+                        "type": "data_input",
+                        "uuid": "455f4c88-47e9-4ab5-a0a8-46e4465b4fc1",
+                        "workflow_outputs": [
+                            {
+                                "label": null,
+                                "output_name": "output",
+                                "uuid": "753186c2-c754-4e88-a02b-081510bff75b"
+                            }
+                        ]
+                    },
+                    "5": {
+                        "annotation": "",
+                        "content_id": null,
+                        "errors": null,
+                        "id": 5,
+                        "input_connections": {},
+                        "inputs": [
+                            {
+                                "description": "",
+                                "name": "Keypair name"
+                            }
+                        ],
+                        "label": "Keypair name",
+                        "name": "Input dataset",
+                        "outputs": [],
+                        "position": {
+                            "bottom": 616.6833038330078,
+                            "height": 61.80000305175781,
+                            "left": 325.51666259765625,
+                            "right": 525.5166625976562,
+                            "top": 554.88330078125,
+                            "width": 200,
+                            "x": 325.51666259765625,
+                            "y": 554.88330078125
+                        },
+                        "tool_id": null,
+                        "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+                        "tool_version": null,
+                        "type": "data_input",
+                        "uuid": "090ebef3-1ee4-4e9c-b3f0-070208e3ff49",
+                        "workflow_outputs": [
+                            {
+                                "label": null,
+                                "output_name": "output",
+                                "uuid": "7f295e53-8190-47b0-829e-7cf9150b11c9"
+                            }
+                        ]
+                    },
+                    "6": {
+                        "annotation": "",
+                        "content_id": "destroyEC2Instance",
+                        "errors": null,
+                        "id": 6,
+                        "input_connections": {
+                            "AWS_ACCESS_KEY_ID": {
+                                "id": 2,
+                                "output_name": "output"
+                            },
+                            "AWS_SECRET_ACCESS_KEY": {
+                                "id": 0,
+                                "output_name": "output"
+                            },
+                            "InstanceId": {
+                                "id": 3,
+                                "output_name": "output"
+                            },
+                            "dependency": {
+                                "id": 1,
+                                "output_name": "output"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool Destroy EC2 Instance",
+                                "name": "AWS_ACCESS_KEY_ID"
+                            },
+                            {
+                                "description": "runtime parameter for tool Destroy EC2 Instance",
+                                "name": "AWS_SECRET_ACCESS_KEY"
+                            },
+                            {
+                                "description": "runtime parameter for tool Destroy EC2 Instance",
+                                "name": "InstanceId"
+                            },
+                            {
+                                "description": "runtime parameter for tool Destroy EC2 Instance",
+                                "name": "dependency"
+                            }
+                        ],
+                        "label": null,
+                        "name": "Destroy EC2 Instance",
+                        "outputs": [
+                            {
+                                "name": "outfile",
+                                "type": "json"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 98.816650390625,
+                            "height": 306.79998779296875,
+                            "left": 815.0499877929688,
+                            "right": 1015.0499877929688,
+                            "top": -207.98333740234375,
+                            "width": 200,
+                            "x": 815.0499877929688,
+                            "y": -207.98333740234375
+                        },
+                        "post_job_actions": {
+                            "RenameDatasetActionoutfile": {
+                                "action_arguments": {
+                                    "newname": "Instance termination results"
+                                },
+                                "action_type": "RenameDatasetAction",
+                                "output_name": "outfile"
+                            }
+                        },
+                        "tool_id": "destroyEC2Instance",
+                        "tool_state": "{\"AWS_ACCESS_KEY_ID\": {\"__class__\": \"RuntimeValue\"}, \"AWS_SECRET_ACCESS_KEY\": {\"__class__\": \"RuntimeValue\"}, \"InstanceId\": {\"__class__\": \"RuntimeValue\"}, \"dependency\": {\"__class__\": \"RuntimeValue\"}, \"region_name\": \"us-east-1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "0.1.0+galaxy0",
+                        "type": "tool",
+                        "uuid": "40b66630-c8eb-4bb2-af3d-cd9c29b032b8",
+                        "workflow_outputs": [
+                            {
+                                "label": "Instance 1 termination",
+                                "output_name": "outfile",
+                                "uuid": "e2013b7d-8e86-4a5d-bde4-a5a6a6a0a3e3"
+                            }
+                        ]
+                    },
+                    "7": {
+                        "annotation": "",
+                        "content_id": "destroyEC2Instance",
+                        "errors": null,
+                        "id": 7,
+                        "input_connections": {
+                            "AWS_ACCESS_KEY_ID": {
+                                "id": 2,
+                                "output_name": "output"
+                            },
+                            "AWS_SECRET_ACCESS_KEY": {
+                                "id": 0,
+                                "output_name": "output"
+                            },
+                            "InstanceId": {
+                                "id": 4,
+                                "output_name": "output"
+                            },
+                            "dependency": {
+                                "id": 1,
+                                "output_name": "output"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool Destroy EC2 Instance",
+                                "name": "AWS_ACCESS_KEY_ID"
+                            },
+                            {
+                                "description": "runtime parameter for tool Destroy EC2 Instance",
+                                "name": "AWS_SECRET_ACCESS_KEY"
+                            },
+                            {
+                                "description": "runtime parameter for tool Destroy EC2 Instance",
+                                "name": "InstanceId"
+                            },
+                            {
+                                "description": "runtime parameter for tool Destroy EC2 Instance",
+                                "name": "dependency"
+                            }
+                        ],
+                        "label": null,
+                        "name": "Destroy EC2 Instance",
+                        "outputs": [
+                            {
+                                "name": "outfile",
+                                "type": "json"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 425.4833221435547,
+                            "height": 306.79998779296875,
+                            "left": 817.7166748046875,
+                            "right": 1017.7166748046875,
+                            "top": 118.68333435058594,
+                            "width": 200,
+                            "x": 817.7166748046875,
+                            "y": 118.68333435058594
+                        },
+                        "post_job_actions": {
+                            "RenameDatasetActionoutfile": {
+                                "action_arguments": {
+                                    "newname": "Instance termination results"
+                                },
+                                "action_type": "RenameDatasetAction",
+                                "output_name": "outfile"
+                            }
+                        },
+                        "tool_id": "destroyEC2Instance",
+                        "tool_state": "{\"AWS_ACCESS_KEY_ID\": {\"__class__\": \"RuntimeValue\"}, \"AWS_SECRET_ACCESS_KEY\": {\"__class__\": \"RuntimeValue\"}, \"InstanceId\": {\"__class__\": \"RuntimeValue\"}, \"dependency\": {\"__class__\": \"RuntimeValue\"}, \"region_name\": \"us-east-1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "0.1.0+galaxy0",
+                        "type": "tool",
+                        "uuid": "f249a66e-c996-4d38-a143-41f3fb55c6f9",
+                        "workflow_outputs": [
+                            {
+                                "label": "Instance 2 termination results",
+                                "output_name": "outfile",
+                                "uuid": "60088a1d-1f0f-439f-ae0e-630f35a892a9"
+                            }
+                        ]
+                    },
+                    "8": {
+                        "annotation": "",
+                        "content_id": "destroyKeyPair",
+                        "errors": null,
+                        "id": 8,
+                        "input_connections": {
+                            "AWS_ACCESS_KEY_ID": {
+                                "id": 2,
+                                "output_name": "output"
+                            },
+                            "AWS_SECRET_ACCESS_KEY": {
+                                "id": 0,
+                                "output_name": "output"
+                            },
+                            "KeyName": {
+                                "id": 5,
+                                "output_name": "output"
+                            },
+                            "dependency": {
+                                "id": 1,
+                                "output_name": "output"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "description": "runtime parameter for tool Destroy AWS keypair",
+                                "name": "AWS_ACCESS_KEY_ID"
+                            },
+                            {
+                                "description": "runtime parameter for tool Destroy AWS keypair",
+                                "name": "AWS_SECRET_ACCESS_KEY"
+                            },
+                            {
+                                "description": "runtime parameter for tool Destroy AWS keypair",
+                                "name": "KeyName"
+                            },
+                            {
+                                "description": "runtime parameter for tool Destroy AWS keypair",
+                                "name": "dependency"
+                            }
+                        ],
+                        "label": null,
+                        "name": "Destroy AWS keypair",
+                        "outputs": [
+                            {
+                                "name": "outfile",
+                                "type": "json"
+                            }
+                        ],
+                        "position": {
+                            "bottom": 742.4833374023438,
+                            "height": 306.79998779296875,
+                            "left": 820.38330078125,
+                            "right": 1020.38330078125,
+                            "top": 435.683349609375,
+                            "width": 200,
+                            "x": 820.38330078125,
+                            "y": 435.683349609375
+                        },
+                        "post_job_actions": {
+                            "RenameDatasetActionoutfile": {
+                                "action_arguments": {
+                                    "newname": "Keypair destruction results"
+                                },
+                                "action_type": "RenameDatasetAction",
+                                "output_name": "outfile"
+                            }
+                        },
+                        "tool_id": "destroyKeyPair",
+                        "tool_state": "{\"AWS_ACCESS_KEY_ID\": {\"__class__\": \"RuntimeValue\"}, \"AWS_SECRET_ACCESS_KEY\": {\"__class__\": \"RuntimeValue\"}, \"KeyName\": {\"__class__\": \"RuntimeValue\"}, \"dependency\": {\"__class__\": \"RuntimeValue\"}, \"region_name\": \"us-east-1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+                        "tool_version": "0.1.0+galaxy0",
+                        "type": "tool",
+                        "uuid": "46fde052-ddb7-4237-994f-9d1533177a24",
+                        "workflow_outputs": [
+                            {
+                                "label": "Keypair destruction results",
+                                "output_name": "outfile",
+                                "uuid": "2805b7b2-5d9c-43ae-b389-62b7e5dddc46"
+                            }
+                        ]
+                    }
+                },
+                "tags": "",
+                "uuid": "87cf48a6-ac77-4c03-9aa0-14e52c08b98c"
+            },
+            "tool_id": "f29b25b2abcdb977",
+            "type": "subworkflow",
+            "uuid": "6195e076-2f78-4ce0-8479-0e1d8bb788aa",
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "3f30ef41-a2fb-445e-b055-497612f38ceb",
+    "version": 64
+}

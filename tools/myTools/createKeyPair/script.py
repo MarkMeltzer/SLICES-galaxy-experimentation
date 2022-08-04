@@ -1,5 +1,6 @@
 import argparse, sys, boto3
 from botocore.config import Config
+import json
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--region_name", required=True)
@@ -24,4 +25,4 @@ result = client.create_key_pair(
 )
 
 print("Returning result...", file=sys.stderr)
-print(result)
+print(json.dumps(result, indent=2, default=str))
